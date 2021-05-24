@@ -3,6 +3,7 @@
 
 from docx import Document
 from docx.shared import Inches
+from PIL import Image
 import os
 
 os.chdir('/home/pi/mu_code/docxTest')
@@ -23,8 +24,8 @@ document.add_paragraph('Intense quote', style='Intense Quote')
 document.add_paragraph('first item in unordered list', style='List Bullet')
 document.add_paragraph('first items in ordered list', style='List Number')
 
-# Adding a picture. What directory is it pulling from?
-document.add_picture('the-truth.jpg', width=Inches(1.25))
+# Adding a picture. Looks like .add_picture() requires the picture's absolute path to load.
+document.add_picture('/home/pi/mu_code/docxTest/the-truth.jpg', width=Inches(1.25))
 
 records = (
     (3, '101', 'Spam'),
