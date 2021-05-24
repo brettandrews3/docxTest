@@ -3,7 +3,9 @@
 
 from docx import Document
 from docx.shared import Inches
+import os
 
+os.chdir('/home/pi/mu_code/docxTest')
 document = Document()
 
 #This line sets the heading for the document. 0 = largest heading?
